@@ -56,7 +56,7 @@ def window_transform_text(text, window_size, step_size):
     #transform text to get around ceil(len(text)/step_size) pairs
     inputs = [text[i:i+window_size] for i in range(0,len(text)-window_size, step_size)]
     outputs = text[window_size::step_size]
-    return inputs,outputs
+    return list(inputs),list(outputs)
 
 # TODO build the required RNN model: 
 # a single LSTM hidden layer with softmax activation, categorical_crossentropy loss 
